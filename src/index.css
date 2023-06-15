@@ -1,3 +1,9 @@
+/* Tailwind Config. Classes */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom CSS */
+.container{
+    @apply w-11/12 lg:w-[80%] mx-auto;
+}

@@ -1,7 +1,11 @@
-import Dashboard from "./Dashboard";
-import Register from "./Register";
+import Home from './Home/Home'
+import LogIn from "./LogIn";
+import SignUp from "./SignUp";
+import Profile from "./Profile";
 
-export{
-    Dashboard,
-    Register
+export {
+    Home,
+    LogIn,
+    SignUp,
+    Profile
 }
