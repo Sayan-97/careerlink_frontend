@@ -1,7 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const LogIn = () => {
+
+    const [user, setUser] = useState({
+        email: '',
+        password: '',
+    });
+
+    const navigate = useNavigate()
+
+    const handleChange = (e) => {
+        setUser((prevUser) => ({
+            ...prevUser,
+            [e.target.name]: e.target.value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('', {
+                email: user.email,
+                password: user.password,
+            })
+            const data = response.data;
+            return data;
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+
     return (
         <section
             className='container flex justify-center'
